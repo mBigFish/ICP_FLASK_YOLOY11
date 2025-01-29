@@ -32,7 +32,7 @@ def get_icp():
 
     # 从查询参数中获取 domain，默认为 'qq.com'
     domain = request.args.get('domain', 'qq.com')
-
+    # print(domain)
     start_time = time.time()
     # 创建 GetIcp 实例并调用 main 方法
     a = ICP()
@@ -45,5 +45,8 @@ def get_icp():
     return jsonify(result)
 
 
+# if __name__ == '__main__':
+#     app.run(debug=True)
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=8011)
